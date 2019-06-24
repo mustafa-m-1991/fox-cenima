@@ -1,0 +1,27 @@
+<h2>LOGIN</h2>
+<p>Perks of logging in? Access to stored payment cards and a quicker booking with all your contact details saved.</p>
+
+
+<div class="login-container">
+
+    <form fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="25px" #loginF="ngForm" (ngSubmit)=(loginF)>
+    <!-- email -->
+    <!-- <label>Email</label> -->
+    <mat-form-field>
+      <input type="email" matInput placeholder="user@domain.com" ngModel name=email email required
+        #emailInputField="ngModel">
+      <mat-error *ngIf="!emailInputField.hasError('required')">E-mail is invalid</mat-error>
+      <mat-error *ngIf="emailInputField.hasError('required')"> E-mail must not be empty</mat-error>
+    </mat-form-field>
+
+
+
+    <!-- password -->
+    <!-- <label>Password</label> -->
+    <mat-form-field>
+      <input type="password" matInput ngModel name=password required minlength="8" #pwInput="ngModel">
+      <mat-hint align="end">{{pwInput.value?.length}} / 8</mat-hint>
+    </mat-form-field>
+
+
+

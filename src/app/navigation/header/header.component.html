@@ -1,0 +1,23 @@
+<mat-toolbar color='primary'>
+  <div fxHide.gt-xs>
+    <button mat-icon-button (click)="onToggleOpenSideNav()">
+      <mat-icon>menu</mat-icon>
+    </button>
+  </div>
+
+  <div class="logo-container">
+    <div fxLayout="column" fxLayoutAlign="center center">
+
+      <img class="logo" src="../../../assets/images/vox-cinema-logo.png" alt="">
+
+    </div>
+
+  </div>
+
+
+  <div fxFLex fxLayout fxLayoutAlign="flex-end" fxHide.xs>
+    <a  routerLink="/login">Log in</a>
+    <a  routerLink="/signin">Sign up</a>
+  </div>
+
+</mat-toolbar>

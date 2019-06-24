@@ -1,0 +1,42 @@
+.logo-container {
+  width: 100%;
+  margin-right: 40px;
+
+
+
+}
+
+.logo {
+  width: 100px;
+  height: 90px;
+
+}
+
+mat-toolbar {
+  height: 100px;
+}
+
+.singin {
+padding: 25px;
+
+}
+
+
+.login {
+  padding: 25px;
+
+
+  }
+
+  a {
+    text-decoration: none;
+    color: white;
+    font-size: 12px;
+    margin: 10px;
+
+  }
+
+  a:hover, :active {
+    color: lightgray;
+
+  }

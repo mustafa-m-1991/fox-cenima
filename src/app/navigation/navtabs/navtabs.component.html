@@ -1,0 +1,65 @@
+<div class="navtabs-container">
+
+  <!--
+  <nav mat-tab-nav-bar>
+    <span class="toolbar-flex"></span>
+
+    <div class="navbar-elements">
+      <mat-tab-group>
+
+        <mat-tab-link label="Home">
+
+            <app-welcome></app-welcome>
+
+
+        </mat-tab-link>
+        <mat-tab label="Movies">
+            <a mat-tab-link
+            [routerLink]="['/movie']"
+
+
+            >
+
+          </a>
+
+
+
+          <app-movie></app-movie>
+
+
+
+        </mat-tab>
+
+        <mat-tab label="Find Us">
+          <app-findus></app-findus>
+
+        </mat-tab>
+
+        <mat-tab label="Ways to watch"></mat-tab>
+        <mat-tab label="Promotions">
+          <app-promotions></app-promotions>
+        </mat-tab>
+
+
+      </mat-tab-group>
+    </div>
+
+
+    <span class="toolbar-flex"></span>
+  </nav>
+</div> -->
+
+
+
+
+
+  <nav mat-tab-nav-bar>
+
+
+      <a mat-tab-link *ngFor="let link of navLinks" [routerLink]="link.link" routerLinkActive #rla="routerLinkActive"
+        [active]="rla.isActive">
+        {{link.label}}
+
+      </a>
+  </nav>
+  <router-outlet></router-outlet>

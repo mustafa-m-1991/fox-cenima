@@ -1,0 +1,112 @@
+<h2>SIGN-UP</h2>
+<p>Perks of signing up? Access to stored payment cards and a quicker booking with all your contact details saved.</p>
+
+
+
+<div class="signup-container">
+
+  <form fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="25px" #signupF="ngForm" (ngSubmit)=onSignUpSumbit(signupF)>
+    <!-- email -->
+    <label>Email</label>
+    <mat-form-field>
+      <input type="email" matInput placeholder="user@domain.com" ngModel name=email email required
+        #emailInputField="ngModel">
+      <mat-error *ngIf="!emailInputField.hasError('required')">E-mail is invalid</mat-error>
+      <mat-error *ngIf="emailInputField.hasError('required')"> E-mail must not be empty</mat-error>
+    </mat-form-field>
+
+    <!-- confirm email -->
+    <label>Confrim Email</label>
+
+    <mat-form-field>
+      <input type="email" matInput placeholder="user@domain.com" ngModel name=confirm_email email required>
+      <mat-error>E-mail is invalid</mat-error>
+    </mat-form-field>
+
+    <label>Password</label>
+
+    <!-- password -->
+    <mat-form-field>
+      <input type="password" matInput ngModel name=password required minlength="8" #pwInput="ngModel">
+      <mat-hint align="end">{{pwInput.value?.length}} / 8</mat-hint>
+    </mat-form-field>
+
+    <label>Confirm password</label>
+    <!-- confirm password -->
+    <mat-form-field hintLabel="">
+      <input type="password" matInput ngModel name=confirm_password required minlength="8" #pwInputC="ngModel">
+      <mat-hint align="end">{{pwInputC.value?.length}} / 8</mat-hint>
+
+    </mat-form-field>
+
+
+
+
+    <label>Title</label>
+
+    <!-- title -->
+    <mat-form-field>
+        <mat-select placeholder="Select title">
+          <mat-option value="action">
+            Mr
+          </mat-option>
+          <mat-option value="comedy">
+            Mrs
+          </mat-option>
+          <mat-option value="horror">
+            Miss
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+
+    <!-- first name -->
+    <label>First name</label>
+
+    <mat-form-field>
+      <input matInput placeholder="">
+    </mat-form-field>
+
+
+    <!-- lastname -->
+    <label>Last name</label>
+
+    <mat-form-field>
+      <input matInput placeholder="">
+    </mat-form-field>
+
+
+    <!-- mobile phone -->
+    <label>Mobile phone</label>
+
+    <mat-form-field>
+      <input matInput placeholder="">
+    </mat-form-field>
+
+    <!-- date of birth -->
+    <label>Date of birth</label>
+
+    <mat-form-field required ngModel name=birthdate>
+      <input matInput [matDatepicker]="picker" placeholder="Enter you date of birth" [max]="maxDate">
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+
+    </mat-form-field>
+
+
+
+    <!-- submit button -->
+
+    <button type="submit" mat-raised-button color="primary"[disabled]="signupF.invalid">Sign-Up</button>
+
+
+    <!-- accepting term of service checkbox -->
+
+    <mat-checkbox ngModel name=agree required>Agree to the term and conditions</mat-checkbox>
+
+
+
+
+
+  </form>
+</div>

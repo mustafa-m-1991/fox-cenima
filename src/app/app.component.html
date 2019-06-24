@@ -1,0 +1,27 @@
+
+<mat-sidenav-container class="sidenav-list">
+    <mat-sidenav #sidenav role="navigation" opened="false">
+
+      <app-sidenav-list (closeSideNav)="sidenav.close()"></app-sidenav-list>
+    </mat-sidenav>
+
+    <mat-sidenav-content>
+
+      <!-- Adding the header -->
+
+      <app-header (sideNavToggled)="sidenav.toggle()"></app-header>
+
+      <!-- Adding the navigation -->
+      <app-navtabs></app-navtabs>
+
+      <!-- TODO: Homepage should go here -->
+
+
+
+
+      <main>
+      <router-outlet></router-outlet>
+    </main>
+    </mat-sidenav-content>
+
+  </mat-sidenav-container>
